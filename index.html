@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body" style="background-color: chartreuse;">
+    
+<div id="box" style="height: 100px;width:100px ;background-color: blue;position: relative;left: 0px;top:0px"></div>
+<input id="input" type="number" placeholder="Give dist in px">
+<button id="button">Click</button>
+<div id="box2" style="background-color: yellow;height: 100px;width:100px;top:0px;left:10px;position: fixed;"></div>
+<input id="input2"   style="position: fixed;right: 0px;top:60px" type="number" placeholder="Give Difficulty Level as a number(0->easy 100->Impossible Else medium)" >
+<script>
+
+
+
+let t=(100*(10*Math.random())/1);
+t=t-(t%1);
+const v=document.getElementById('box2')
+v.style.left=t+"px";
+v.style.top=t+"px";
+let count=0;
+const v1=document.getElementById('box')
+const button=document.getElementById('button')
+button.addEventListener('click',()=>{
+    const t1=document.getElementById('input');
+    const t2=document.getElementById('input2');
+    let curr=t2.value;
+    if(curr>=100||curr<0){document.write("Unpossible Level.");}
+// v1.style.width=t1.value;
+// v1.style.height=t1.value;
+ v1.style.left=t1.value+'px';
+ v1.style.top=t1.value+'px';
+ count++;
+ if(t1.value==t-8){document.write("Congratuations "+(100-count-(curr/5))+" is your score");}
+ console.log(count);
+})
+
+</script>
+
+
+</body>
+</html>
